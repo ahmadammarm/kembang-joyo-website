@@ -15,25 +15,25 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// Toggle class active search form
-const searchForm = document.querySelector(".search-form");
-const searchBox = document.querySelector("#search-box");
+// // Toggle class active search form
+// const searchForm = document.querySelector(".search-form");
+// const searchBox = document.querySelector("#search-box");
 
-document.querySelector("#search-btn").onclick = (e) => {
-  searchForm.classList.toggle("active");
-  searchBox.focus();
-  e.preventDefault();
-}
+// document.querySelector("#search-btn").onclick = (e) => {
+//   searchForm.classList.toggle("active");
+//   searchBox.focus();
+//   e.preventDefault();
+// }
 
 
-// Klik di luar search form supaya formnya hilang
-const searchBtn = document.querySelector("#search-btn");
+// // Klik di luar search form supaya formnya hilang
+// const searchBtn = document.querySelector("#search-btn");
 
-document.addEventListener("click", function (e) {
-  if (!searchBtn.contains(e.target) && !searchForm.contains(e.target)) {
-    searchForm.classList.remove("active");
-  }
-})
+// document.addEventListener("click", function (e) {
+//   if (!searchBtn.contains(e.target) && !searchForm.contains(e.target)) {
+//     searchForm.classList.remove("active");
+//   }
+// })
 
 // Logika untuk ketika tombol add to cart diklik
 const shoppingCart = document.querySelector(".shopping-cart");
