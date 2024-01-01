@@ -12,7 +12,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
@@ -24,10 +27,20 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- Alpine Js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
 
     <!-- Alpine JS -->
     <script src="js/app.js" async></script>
+
+    <!-- Swiper JS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </head>
 
   <body>
@@ -46,14 +59,18 @@
         <!-- <a href="#" id="search-btn"><i data-feather="search"></i></a> -->
         <a href="#" id="shopping-cart-btn">
           <i data-feather="shopping-cart"></i>
-          <span class="shopping-cart-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
+          <span
+            class="shopping-cart-badge"
+            x-show="$store.cart.quantity"
+            x-text="$store.cart.quantity"
+          ></span>
         </a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
 
       <!-- Search Form Start -->
       <div class="search-form">
-        <input type="search" id="search-box" placeholder="Cari disini....">
+        <input type="search" id="search-box" placeholder="Cari disini...." />
         <label for="search-box">
           <i data-feather="search"></i>
         </label>
@@ -64,37 +81,69 @@
       <div class="shopping-cart">
         <template x-for="(item, index) in $store.cart.items" x-key="index">
           <div class="cart-item">
-            <img :src="`img/menu/${item.img}`" :alt="item.name">
+            <img :src="`img/menu/${item.img}`" :alt="item.name" />
             <div class="item-detail">
               <h3 x-text="item.name"></h3>
               <div class="item-price">
                 <span x-text="formatRupiah(item.price)"></span> &times;
-                <button id="remove-product-cart" @click="$store.cart.remove(item.id)">&minus;</button>
+                <button
+                  id="remove-product-cart"
+                  @click="$store.cart.remove(item.id)"
+                >
+                  &minus;
+                </button>
                 <span x-text="item.quantity"></span>
-                <button id="add-product-cart" @click="$store.cart.add(item)">&plus;</button> &equals;
+                <button id="add-product-cart" @click="$store.cart.add(item)">
+                  &plus;
+                </button>
+                &equals;
                 <span x-text="formatRupiah(item.total)"></span>
               </div>
             </div>
           </div>
         </template>
         <h4 x-show="!$store.cart.items.length">Keranjang Masih Kosong</h4>
-        <h4 x-show="$store.cart.items.length">Total : <span x-text="formatRupiah($store.cart.total)"></span></h4>
+        <h4 x-show="$store.cart.items.length">
+          Total : <span x-text="formatRupiah($store.cart.total)"></span>
+        </h4>
         <div class="form-container" x-show="$store.cart.items.length">
           <form action="" id="checkoutForm">
-            <input type="hidden" name="items" x-model="JSON.stringify($store.cart.items)">
-            <input type="hidden" name="total" x-model="$store.cart.total">
+            <input
+              type="hidden"
+              name="items"
+              x-model="JSON.stringify($store.cart.items)"
+            />
+            <input type="hidden" name="total" x-model="$store.cart.total" />
             <h5>Customer Detail</h5>
             <label for="name">
               <span>Name</span>
-              <input type="text" name="name" id="name" autocomplete="off" required>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                autocomplete="off"
+                required
+              />
             </label>
             <label for="email">
               <span>Email</span>
-              <input type="email" name="email" id="email" autocomplete="off" required>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                autocomplete="off"
+                required
+              />
             </label>
             <label for="phone">
               <span>Phone</span>
-              <input type="number" name="phone" id="phone" autocomplete="off" required>
+              <input
+                type="number"
+                name="phone"
+                id="phone"
+                autocomplete="off"
+                required
+              />
             </label>
             <button class="checkout-btn" type="submit" id="checkout-btn">
               Order
@@ -112,14 +161,19 @@
       <main class="content" data-aos="fade-up" data-aos-duration="2000">
         <h1><span>Maniskan</span> Waktumu dengan <span>Madu</span> Kami</h1>
         <p>Temukan Kenikmatan Asli dalam Setiap Tetes Madu Kami</p>
-          <p>Maniskan dan Nikmati Waktu Anda dengan Kelezatan Alami</p>
+        <p>Maniskan dan Nikmati Waktu Anda dengan Kelezatan Alami</p>
         <a href="#products" class="cta">Buy Now</a>
       </main>
     </section>
     <!-- Hero Section End -->
 
     <!-- About Us Section -->
-    <section id="about" class="about" data-aos="fade-up" data-aos-duration="2000">
+    <section
+      id="about"
+      class="about"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
       <h2><span>ABOUT</span> US</h2>
 
       <div class="row" data-aos="fade-up" data-aos-duration="2000">
@@ -128,8 +182,19 @@
         </div>
         <div class="content">
           <h3>Kenapa harus memilih kami?</h3>
-          <p>Madu <span>Kembang Joyo</span> adalah produk berkualitas tinggi yang dihasilkan secara teliti dari koloni lebah yang terletak di tengah-tengah keindahan alam yang subur. Dibuat dengan cinta dan perawatan oleh para peternak lebah berpengalaman, setiap botol madu mengandung kelezatan alami yang tak tertandingi.</p>
-          <p>Setiap tegukan madu <span>Kembang Joyo</span> membawa kelezatan alam yang kaya akan nutrisi, memberikan manfaat kesehatan yang luar biasa. Rasakan kenikmatan alami dan manfaat kesehatan yang tak ternilai dari produk kami yang berkualitas tinggi.</p>
+          <p>
+            Madu <span>Kembang Joyo</span> adalah produk berkualitas tinggi yang
+            dihasilkan secara teliti dari koloni lebah yang terletak di
+            tengah-tengah keindahan alam yang subur. Dibuat dengan cinta dan
+            perawatan oleh para peternak lebah berpengalaman, setiap botol madu
+            mengandung kelezatan alami yang tak tertandingi.
+          </p>
+          <p>
+            Setiap tegukan madu <span>Kembang Joyo</span> membawa kelezatan alam
+            yang kaya akan nutrisi, memberikan manfaat kesehatan yang luar
+            biasa. Rasakan kenikmatan alami dan manfaat kesehatan yang tak
+            ternilai dari produk kami yang berkualitas tinggi.
+          </p>
         </div>
       </div>
     </section>
@@ -200,12 +265,24 @@
     <!-- Menu Section End -->
 
     <!-- Product Section Start -->
-    <section class="products" id="products" data-aos="fade-up" data-aos-duration="1000" x-data="products">
+    <section
+      class="products swiper-container"
+      id="products"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      x-data="products"
+    >
       <h2>OUR BEST <span>PRODUCT</span></h2>
-      <p>Temukan produk unggulan kami yang siap untuk dipesan secara takeaway!</p>
-      <div class="row">
+      <p>
+        Temukan produk unggulan kami yang siap untuk dipesan secara takeaway!
+      </p>
+      <div class="swiper-wrapper row">
         <template x-for="(item, index) in items" x-key="index">
-          <div class="product-card" data-aos="flip-right" data-aos-duration="2000">
+          <div
+            class="product-card swiper-slide"
+            data-aos="flip-right"
+            data-aos-duration="2000"
+          >
             <div class="product-icons">
               <!-- <button href="#" class="item-modal-btn">
                 <svg
@@ -220,22 +297,26 @@
                   <use href="img/feather-sprite.svg#eye"/>
                 </svg>
               </button> -->
-              <button href="#" @click="$store.cart.add(item)" class="shopping-cart-button">
-                <svg
-                width="20"
-                height="20"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <button
+                href="#"
+                @click="$store.cart.add(item)"
+                class="shopping-cart-button"
               >
-                <use href="img/feather-sprite.svg#shopping-cart" />
-              </svg>
-            </button>
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <use href="img/feather-sprite.svg#shopping-cart" />
+                </svg>
+              </button>
             </div>
             <div class="product-img">
-              <img :src="`img/menu/${item.img}`" :alt="item.name">
+              <img :src="`img/menu/${item.img}`" :alt="item.name" />
             </div>
             <div class="product-content">
               <h3>
@@ -243,7 +324,7 @@
               </h3>
               <div class="product-price">
                 <p>
-                  <span x-text="formatRupiah(item.price)"></span>                  
+                  <span x-text="formatRupiah(item.price)"></span>
                 </p>
               </div>
             </div>
@@ -255,10 +336,14 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-      <h2 data-aos="fade-up" data-aos-duration="2000">OUR <span>CONTACT</span></h2>
+      <h2 data-aos="fade-up" data-aos-duration="2000">
+        OUR <span>CONTACT</span>
+      </h2>
       <!-- <p data-aos="fade-up" data-aos-duration="2000">Pengen nikmatin kopinya tapi gabisa kesini?</p>
       <p data-aos="fade-up" data-aos-duration="2000">Tenang, hubungi kami aja ya!</p> -->
-      <p data-aos="fade-up" data-aos-duration="2000">Pelayanan kami siap mengantar ke rumah kalian!</p>
+      <p data-aos="fade-up" data-aos-duration="2000">
+        Pelayanan kami siap mengantar ke rumah kalian!
+      </p>
 
       <div class="row" data-aos="fade-up" data-aos-duration="2000">
         <iframe
@@ -304,7 +389,11 @@
       </div>
 
       <div class="credit">
-        <p>Dikembangkan oleh <a href="https://porto-ammar.vercel.app">ahmadammar</a>. | &copy; 2023.</p>
+        <p>
+          Dikembangkan oleh
+          <a href="https://ahmadammar.vercel.app">ahmadammar</a>. | &copy;
+          2023.
+        </p>
       </div>
     </footer>
     <!-- Footer End -->
@@ -314,14 +403,22 @@
       <div class="modal-container">
         <a href="#" class="close"><i data-feather="x"></i></a>
         <div class="modal-content">
-          <img src="img/menu/1.jpg" alt="Product1">
+          <img src="img/menu/1.jpg" alt="Product1" />
           <div class="product-content">
             <h3>Product 1</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum, nulla similique iure enim voluptatem dolor, cum fugiat architecto ad voluptatibus. Aliquid earum delectus nobis?</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perferendis dolorum, nulla similique iure enim voluptatem dolor,
+              cum fugiat architecto ad voluptatibus. Aliquid earum delectus
+              nobis?
+            </p>
             <div class="product-price">
               <p>IDR 15K</p>
             </div>
-            <a href="#"><i data-feather="shopping-cart"></i> <span>Tambah ke Keranjang</span></a>
+            <a href="#"
+              ><i data-feather="shopping-cart"></i>
+              <span>Tambah ke Keranjang</span></a
+            >
           </div>
         </div>
       </div>
@@ -334,8 +431,6 @@
       AOS.init();
     </script>
 
-
-
     <!-- Feather Icons -->
     <script>
       feather.replace();
@@ -343,7 +438,5 @@
 
     <!-- My JS -->
     <script src="js/script.js"></script>
-
-
   </body>
 </html>
