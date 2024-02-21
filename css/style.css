@@ -800,10 +800,6 @@ footer .credit a:hover {
     flex-wrap: wrap;
   }
 
-  .contact .row .map {
-    height: 30rem;
-  }
-
   .contact .row form {
     padding-top: 0;
   }
