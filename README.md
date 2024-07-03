@@ -1,6 +1,6 @@
-# Lets Coffee Landing Page
+# Kembang Joyo Landing Page
 <p>Hi everyone ! <br>
-This is my repository about Lets Coffee Landing Page <br>
+This is my repository about Kembang Joyo Landing Page <br>
 Hope u happy to used it</p>
 
 ### Techs in This Project
@@ -15,5 +15,5 @@ Before you begin, ensure you have met the following requirements:
 ### Run Locally
 To run in the locally, run this command on your git bash:
 ```bash
-git clone https://github.com/ahmadammarm/lets-coffee.git
+git clone https://github.com/ahmadammarm/kembang-joyo-website.git
 ```
